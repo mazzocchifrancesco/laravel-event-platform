@@ -25,6 +25,7 @@
 							@else
 								<span>no tags</span>
 							@endif
+							<a href="{{ route('admin.events.show', $event->id) }}" class="btn btn-primary my-3">Dettagli</a>
                                 {{-- chiusura card  --}}
                             </div>
 							@endforeach

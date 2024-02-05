@@ -59,7 +59,7 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
+        return view("admin.events.show", compact("event"));
     }
 
     /**
@@ -70,7 +70,8 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+        $tags = Tag::all();
+        return view("admin.events.edit", compact("event", "tags"));
     }
 
     /**
@@ -82,7 +83,14 @@ class EventController extends Controller
      */
     public function update(EventRequest $request, Event $event)
     {
-        //
+        $dati_validati = $request->validated();
+        $event->update($dati_validati);
+
+
+        if ($request->tags) {
+            $event->tags()->sync($request->tags);
+        }
+        return redirect()->route('admin.events.show', $event->id);
     }
 
     /**
@@ -93,6 +101,8 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        $event->delete();
+
+        return redirect()->route('admin.events.index');
     }
 }

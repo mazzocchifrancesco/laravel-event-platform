@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('image', 200);
             $table->date('event_date');
             $table->string('organizer', 50);
-            $table->tinyInteger('available_tickets');
+            $table->mediumInteger('available_tickets');
             $table->timestamps();
         });
     }

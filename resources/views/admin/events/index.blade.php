@@ -16,6 +16,16 @@
 								<p class="text-uppercase fw-bold text-center my-2">{{ $event->name }}</p>
 								<p class="fw-bold">{{ $event->organizer }}</p>
                                 
+                                @if (count($event->tags) > 0)
+								<ul>
+									@foreach ($event->tags as $tag)
+										<li>{{ $tag->name }}</li>
+									@endforeach
+								</ul>
+							@else
+								<span>no tags</span>
+							@endif
+                                {{-- chiusura card  --}}
                             </div>
 							@endforeach
 					</div>

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Event;
-use App\Http\Requests\StoreEventRequest;
-use App\Http\Requests\UpdateEventRequest;
+use App\Models\Tag;
+use App\Http\Requests\EventRequest;
 use App\Http\Controllers\Controller;
 
 class EventController extends Controller
@@ -27,7 +27,9 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        $events = Event::all();
+        $tags = Tag::all();
+        return view("admin.events.create", compact("events", "tags"));
     }
 
     /**
@@ -36,9 +38,17 @@ class EventController extends Controller
      * @param  \App\Http\Requests\StoreEventRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreEventRequest $request)
+    public function store(EventRequest $request)
     {
-        //
+        $dati_validati = $request->validated();
+        $event = new Event();
+        $event->fill($dati_validati);
+        $event->save();
+        if ($request->tags) {
+            $event->tags()->attach($request->tags);
+        }
+
+        return redirect()->route('admin.events.index', $event->id);
     }
 
     /**
@@ -70,7 +80,7 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateEventRequest $request, Event $event)
+    public function update(EventRequest $request, Event $event)
     {
         //
     }

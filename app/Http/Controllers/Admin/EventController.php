@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Tag;
-use App\Http\Requests\StoreTagRequest;
-use App\Http\Requests\UpdateTagRequest;
+use App\Models\Event;
+use App\Http\Requests\StoreEventRequest;
+use App\Http\Requests\UpdateEventRequest;
+use App\Http\Controllers\Controller;
 
-class TagController extends Controller
+class EventController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class TagController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreTagRequest  $request
+     * @param  \App\Http\Requests\StoreEventRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTagRequest $request)
+    public function store(StoreEventRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class TagController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tag  $tag
+     * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show(Tag $tag)
+    public function show(Event $event)
     {
         //
     }
@@ -53,10 +54,10 @@ class TagController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tag  $tag
+     * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tag $tag)
+    public function edit(Event $event)
     {
         //
     }
@@ -64,11 +65,11 @@ class TagController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateTagRequest  $request
-     * @param  \App\Models\Tag  $tag
+     * @param  \App\Http\Requests\UpdateEventRequest  $request
+     * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTagRequest $request, Tag $tag)
+    public function update(UpdateEventRequest $request, Event $event)
     {
         //
     }
@@ -76,10 +77,10 @@ class TagController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tag  $tag
+     * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tag $tag)
+    public function destroy(Event $event)
     {
         //
     }

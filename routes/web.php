@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController; //<---- Import del controller precedentemente creato!
+use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\Admin\TagController;
+use App\Models\Event;
+use App\Models\Tag;
+
 
 /* ... */
 
@@ -18,6 +23,8 @@ Route::middleware(['auth'])
         // - il percorso "/" diventa "admin/"
         // - il nome della rotta ->name("dashboard") diventa ->name("admin.dashboard")
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::resource('events', EventController::class);
+        Route::resource('tags', TagController::class);
     });
 
 require __DIR__ . '/auth.php';

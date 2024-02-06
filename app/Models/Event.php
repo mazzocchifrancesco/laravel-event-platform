@@ -16,7 +16,8 @@ class Event extends Model
         "image",
         "event_date",
         "organizer",
-        "available_tickets"
+        "available_tickets",
+        "location",
     ];
     public function tags()
     {

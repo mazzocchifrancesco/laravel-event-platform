@@ -59,6 +59,13 @@
 					<div class="invalid-feedback">{{ $message }}</div>
 				@enderror
 			</div>
+			<div class="mb-3">
+				<label for="location" class="form-label">location</label>
+				<input type="text" class="form-control @error('location') is-invalid @enderror" id="location" name="location" value="{{old("location")}}">
+				@error('location')
+					<div class="invalid-feedback">{{ $message }}</div>
+				@enderror
+			</div>
 			{{-- aggiunta tag  --}}
 
 			<div class="mb-3">

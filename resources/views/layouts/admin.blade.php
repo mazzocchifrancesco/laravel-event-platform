@@ -43,12 +43,17 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.events.index' ? 'bg-secondary' : '' }}" href="{{route('admin.events.index')}}">
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Eventi
+                                    <i class="fa-solid fa-champagne-glasses fa-lg fa-fw"></i> Eventi
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.events.create' ? 'bg-secondary' : '' }}" href="{{route('admin.events.create')}}">
+                                    <i class="fa-solid fa-plus fa-lg fa-fw"></i> Crea Evento
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.tags.index' ? 'bg-secondary' : '' }}" href="{{route('admin.tags.index')}}">
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Tags
+                                    <i class="fa-solid fa-hashtag fa-lg fa-fw"></i> Tags
                                 </a>
                             </li>
                             <li class="nav-item">

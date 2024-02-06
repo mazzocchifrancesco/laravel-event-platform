@@ -12,8 +12,12 @@
 						<div class="row">
 						@foreach ($tags as $tag)
 							<div class="col-4 mb-4 rounded d-flex flex-column align-items-center" id="card">
-								<img class="cardImg rounded" src={{$tag->image}} alt="">
-								<p class="text-uppercase fw-bold text-center my-2">{{ $tag->name }}</p>
+								<div class="imgBoxIndex rounded">
+									<img class="cardImg rounded" src={{$tag->image}} alt="">
+								</div>
+								<p class="text-capitalize fw-bold text-center my-2">{{ $tag->name }}</p>
+								<p class="text-center">{{ $tag->description }}</p>
+
                                 
                             </div>
 							@endforeach

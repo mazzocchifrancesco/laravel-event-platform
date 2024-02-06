@@ -28,9 +28,10 @@
 								<img class="cardImg" src={{$event->image}} alt="">
 								<p class="text-uppercase fw-bold text-center py-3">{{ $event->name }}</p>
 								<p class="fw-light">{{ $event->description }}</p>
-								<p class="fw-bold">{{ $event->organizer }}</p>
-								<p class=""><strong>data creazione:</strong> {{ $event->event_date }}</p>
-								<p class=""><strong>biglietti disponibili:</strong> {{ $event->available_tickets }}</p>
+								<p class=""><strong>Organizzatore:</strong> {{ $event->organizer }}</p>
+								<p class=""><strong>Data:</strong> {{ $event->event_date }}</p>
+								<p class=""><strong>Location:</strong> {{ $event->location }}</p>
+								<p class=""><strong>Biglietti Disponibili:</strong> {{ $event->available_tickets }}</p>
 
 								@if (count($event->tags) > 0)
 								<ul>

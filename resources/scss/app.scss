@@ -2,8 +2,7 @@
 
 .cardImg {
     width: 100%;
-    object-fit: cover;
-    object-position: 100% 0;
+    // object-position: 50% 50%;
 
 
 }
@@ -13,4 +12,21 @@
     height: 7rem;
     overflow: hidden;
 
+}
+
+.indexList {
+    list-style: none;
+}
+
+.indexListItem {
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.info-btn {
+    color: rgb(20, 13, 235);
+}
+
+#card {
+    padding: 5px;
 }

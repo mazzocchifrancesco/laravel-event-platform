@@ -28,6 +28,7 @@ class EventRequest extends FormRequest
             'event_date' => ["required"],
             'organizer' => ["required", "max:50"],
             'available_tickets' => ["required"],
+            'location' => ["required"],
             "tags" => ["exists:tags,id"],
 
         ];

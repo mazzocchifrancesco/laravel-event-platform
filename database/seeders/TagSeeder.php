@@ -11,12 +11,13 @@ class TagSeeder extends Seeder
 {
     public function run(Faker $faker): void
     {
+        $array_tags = config("tags");
 
-        for ($i = 0; $i < 5; $i++) {
+        foreach ($array_tags as $tag_item) {
             $nuovoTag = new Tag();
-            $nuovoTag->name = $faker->sentence(2);
-            $nuovoTag->description = $faker->paragraph(2);
-            $nuovoTag->image = $faker->imageUrl(640, 480, 'event', true);
+            $nuovoTag->name = $tag_item["name"];
+            $nuovoTag->description = $tag_item["description"];
+            $nuovoTag->image = $tag_item["image"];
             $nuovoTag->save();
         }
     }

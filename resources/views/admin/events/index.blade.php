@@ -5,27 +5,30 @@
 	<div class="row justify-content-center">
 		<div class="col-md-8">
 			<div class="card">
-				<div class="card-header">{{ __('Index') }}</div>
+				<div class="card-header">{{ __('Eventi') }}</div>
 
 				<div class="card-body">
 					<div id="cardBox" class="container">
 						<div class="row">
 						@foreach ($events as $event)
 							<div class="col-4 mb-4 rounded d-flex flex-column align-items-center" id="card">
-								<img class="cardImg rounded" src={{$event->image}} alt="">
-								<p class="text-uppercase fw-bold text-center my-2">{{ $event->name }}</p>
-								<p class="fw-bold">{{ $event->organizer }}</p>
+								<div class="imgBoxIndex rounded">
+									<img class="cardImg rounded" src={{$event->image}} alt="">
+								</div>
+								<p class="text-capitalize fw-bold text-center my-2">{{ $event->name }}</p>
+								<p class=""><strong>{{ $event->available_tickets }}</strong> biglietti rimasti</p>
                                 
                                 @if (count($event->tags) > 0)
-								<ul>
+								<ul class="indexList">
 									@foreach ($event->tags as $tag)
-										<li>{{ $tag->name }}</li>
+										<li class="indexListItem">#{{ $tag->name }}</li>
 									@endforeach
 								</ul>
 							@else
 								<span>no tags</span>
 							@endif
-							<a href="{{ route('admin.events.show', $event->id) }}" class="btn btn-primary my-3">Dettagli</a>
+							
+							<a href="{{ route('admin.events.show', $event->id) }}" class="btn info-btn my-3"><i class="fa-solid fa-circle-info fa-2xl"></i></a>
                                 {{-- chiusura card  --}}
                             </div>
 							@endforeach

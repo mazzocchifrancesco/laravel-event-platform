@@ -31,6 +31,7 @@ class EventRequest extends FormRequest
             'location' => ["required"],
             "tags" => ["exists:tags,id"],
 
+
         ];
     }
 }

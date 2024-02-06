@@ -6,7 +6,6 @@
 		<div class="col-md-8">
 			<div class="card">
 				<div class="card-header">{{ __('Eventi') }}</div>
-
 				<div class="card-body">
 					<div id="cardBox" class="container">
 						<div class="row">
@@ -17,7 +16,8 @@
 								</div>
 								<p class="text-capitalize fw-bold text-center my-2">{{ $event->name }}</p>
 								<p class=""><strong>{{ $event->available_tickets }}</strong> biglietti rimasti</p>
-                                
+								{{-- stampa utente  --}}
+                                <p>utente: <strong>{{$event->user ? $event->user->name : "nessun utente"}}</strong> </p>
                                 @if (count($event->tags) > 0)
 								<ul class="indexList">
 									@foreach ($event->tags as $tag)

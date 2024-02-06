@@ -6,6 +6,7 @@ use App\Models\Event;
 use App\Models\Tag;
 use App\Http\Requests\EventRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
@@ -41,6 +42,7 @@ class EventController extends Controller
     public function store(EventRequest $request)
     {
         $dati_validati = $request->validated();
+        $dati_validati['user_id'] = Auth::id();
         $event = new Event();
         $event->fill($dati_validati);
         $event->save();
@@ -48,7 +50,7 @@ class EventController extends Controller
             $event->tags()->attach($request->tags);
         }
 
-        return redirect()->route('admin.events.index', $event->id);
+        return redirect()->route('admin.events.index');
     }
 
     /**

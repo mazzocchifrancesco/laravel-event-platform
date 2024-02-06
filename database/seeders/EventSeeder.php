@@ -23,6 +23,7 @@ class EventSeeder extends Seeder
             $nuovoEvento->organizer = $event_item["organizer"];
             $nuovoEvento->location = $event_item["location"];
             $nuovoEvento->available_tickets = $event_item["available_tickets"];
+            $nuovoEvento->user_id = $event_item["user_id"];
             $nuovoEvento->save();
         }
     }

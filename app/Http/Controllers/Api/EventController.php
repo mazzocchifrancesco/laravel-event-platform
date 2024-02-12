@@ -20,7 +20,7 @@ class EventController extends Controller
     }
     public function show($id)
     {
-        $event = Event::with("user")->find($id);
+        $event = Event::with("user", "tags:name")->find($id);
 
         return response()->json([
             "success" => $event ? true : false,

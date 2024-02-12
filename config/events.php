@@ -10,7 +10,8 @@ return [
         "organizer" => "johnny B. Good",
         "location" => "Park Nord, Stadio Euganeo di Padova",
         "available_tickets" => 5000,
-        "user_id" => 1
+        "user_id" => 1,
+        "tags" => [1, 3]
     ],
     [
         "name" => "Giovanni Allevi - Piano solo tour",
@@ -20,7 +21,8 @@ return [
         "organizer" => "comune di Trento",
         "location" => "Teatro Auditorium Santa Chiara",
         "available_tickets" => 300,
-        "user_id" => 1
+        "user_id" => 1,
+        "tags" => [1]
 
     ],
     [
@@ -31,7 +33,8 @@ return [
         "organizer" => "Ticketone",
         "location" => "Sequoie Music Park - Parco Caserme Rosse",
         "available_tickets" => 800,
-        "user_id" => 1
+        "user_id" => 1,
+        "tags" => [1, 2]
 
     ],
     [
@@ -42,7 +45,8 @@ return [
         "organizer" => "Guccini",
         "location" => "Osteria di Pàvana",
         "available_tickets" => 3,
-        "user_id" => 1
+        "user_id" => 1,
+        "tags" => [3]
 
     ],
     [
@@ -53,7 +57,8 @@ return [
         "organizer" => "un vecchio che pasava",
         "location" => "un fosso a caso",
         "available_tickets" => 600,
-        "user_id" => 1
+        "user_id" => 1,
+        "tags" => [2]
 
     ],
 ];

@@ -25,6 +25,7 @@ class EventSeeder extends Seeder
             $nuovoEvento->available_tickets = $event_item["available_tickets"];
             $nuovoEvento->user_id = $event_item["user_id"];
             $nuovoEvento->save();
+            $nuovoEvento->tags()->attach($event_item["tags"]); //prende tag da array e li spara in tabella ponte, deve essere dopo save, prima non esiste l'id evento
         }
     }
 }
